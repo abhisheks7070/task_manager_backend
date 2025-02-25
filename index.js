@@ -11,12 +11,15 @@ const User = require('./models/User');
 const app = express();
 
 app.use(cors({
-  origin: '*', // Replace with your frontend URL
-  methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
-  credentials: true, // Allow credentials (cookies, auth headers)
+  origin: '*', // Allow all origins
+  methods: 'GET,POST,PUT,DELETE,OPTIONS', // Include OPTIONS for preflight
+  allowedHeaders: '*', // Allow necessary headers
 }));
 
-// app.use(cors());
+// Handle preflight requests explicitly
+app.options('*', cors()); // Allow preflight for all routes
+
+
 const PORT = 5000;
 
 // Middleware
