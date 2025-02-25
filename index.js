@@ -11,7 +11,7 @@ const User = require('./models/User');
 const app = express();
 
 app.use(cors({
-  origin: 'https://your-frontend-url.com', // Replace with your frontend URL
+  origin: '*', // Replace with your frontend URL
   methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
   credentials: true, // Allow credentials (cookies, auth headers)
 }));
