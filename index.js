@@ -11,13 +11,14 @@ const User = require('./models/User');
 const app = express();
 
 app.use(cors({
-  origin: '*', // Allow all origins
+  origin: "*", // Allow specific origins
   methods: 'GET,POST,PUT,DELETE,OPTIONS', // Include OPTIONS for preflight
-  allowedHeaders: '*', // Allow necessary headers
+  allowedHeaders: '*', // Allow all headers
+  credentials: true, // Allow credentials (cookies, authorization headers)
 }));
 
 // Handle preflight requests explicitly
-app.options('*', cors()); // Allow preflight for all routes
+app.options('*', cors()); // Allow preflight for all rout
 
 
 const PORT = 5000;
