@@ -13,6 +13,6 @@ const taskSchema = new mongoose.Schema({
   submitted: { type: Boolean, default: false },
   employee: { type: String, required: true },
   admin: { type: String, required: true },
-});
+}, {timestamps : true});
 
 module.exports = mongoose.model('Task', taskSchema);
